@@ -1,10 +1,10 @@
 import { defineConfig } from 'astro/config';
-import DecapCMS from 'astro-decap-cms';
+import NetlifyCMS from 'astro-netlify-cms';
 
 // https://astro.build/config
 export default defineConfig({
   integrations: [
-    DecapCMS({
+    NetlifyCMS({
       config: {
         // Use Netlify’s “Git Gateway” authentication and target our default branch
         backend: {
@@ -33,9 +33,24 @@ export default defineConfig({
                 time_format: false,
                 label: 'Publish Date',
               },
-              { name: 'author', widget: 'string', label: 'Author Name', required: false },
-              { name: 'authorURL', widget: 'string', label: 'Author URL', required: false },
-              { name: 'description', widget: 'string', label: 'Description', required: false },
+              {
+                name: 'author',
+                widget: 'string',
+                label: 'Author Name',
+                required: false,
+              },
+              {
+                name: 'authorURL',
+                widget: 'string',
+                label: 'Author URL',
+                required: false,
+              },
+              {
+                name: 'description',
+                widget: 'string',
+                label: 'Description',
+                required: false,
+              },
               { name: 'body', widget: 'markdown', label: 'Post Body' },
               {
                 name: 'layout',
